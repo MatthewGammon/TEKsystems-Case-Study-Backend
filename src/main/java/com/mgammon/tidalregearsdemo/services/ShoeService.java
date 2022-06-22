@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Shoe;
 import com.mgammon.tidalregearsdemo.repositories.ShoeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class ShoeService {
     }
 
     public void addNewShoes(Shoe shoe) {
-        if (shoe.getShoeName() == null || shoe.getShoeName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         shoeRepository.save(shoe);
     }
 

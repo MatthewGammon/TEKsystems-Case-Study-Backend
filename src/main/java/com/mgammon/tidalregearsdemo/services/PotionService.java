@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Potion;
 import com.mgammon.tidalregearsdemo.repositories.PotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class PotionService {
     }
 
     public void addNewPotion(Potion potion) {
-        if (potion.getPotionName() == null || potion.getPotionName().isEmpty()){
-            throw new PropertyIsNullException();
-        }
         potionRepository.save(potion);
     }
 

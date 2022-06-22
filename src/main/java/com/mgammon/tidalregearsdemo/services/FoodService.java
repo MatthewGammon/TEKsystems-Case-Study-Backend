@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Food;
 import com.mgammon.tidalregearsdemo.repositories.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class FoodService {
     }
 
     public void addNewFood(Food food) {
-        if (food.getFoodName() == null || food.getFoodName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         foodRepository.save(food);
     }
 

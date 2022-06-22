@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Head;
 import com.mgammon.tidalregearsdemo.repositories.HeadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class HeadService {
     }
 
     public void addNewHeadGear(Head head) {
-        if (head.getHeadName() == null || head.getHeadName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         headRepository.save(head);
 
     }

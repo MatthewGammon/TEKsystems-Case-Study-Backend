@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Cape;
 import com.mgammon.tidalregearsdemo.repositories.CapeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class CapeService {
     }
 
     public void addNewCape(Cape cape) {
-        if (cape.getCapeName() == null || cape.getCapeName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         capeRepository.save(cape);
 
     }

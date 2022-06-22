@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Chest;
 import com.mgammon.tidalregearsdemo.repositories.ChestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class ChestService {
     }
 
     public void addNewChestGear(Chest chest) {
-        if (chest.getChestName() == null || chest.getChestName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         chestRepository.save(chest);
     }
 

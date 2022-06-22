@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.OffHand;
 import com.mgammon.tidalregearsdemo.repositories.OffHandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class OffHandService {
     }
 
     public void addNewOffHand(OffHand offHand) {
-        if (offHand.getOffHandName() == null || offHand.getOffHandName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         offHandRepository.save(offHand);
     }
 

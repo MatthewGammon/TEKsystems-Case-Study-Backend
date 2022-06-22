@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.MainHand;
 import com.mgammon.tidalregearsdemo.repositories.MainHandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class MainHandService {
     }
 
     public void addNewMainHand(MainHand mainHand) {
-        if (mainHand.getMainHandName() == null || mainHand.getMainHandName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         mainHandRepository.save(mainHand);
     }
 

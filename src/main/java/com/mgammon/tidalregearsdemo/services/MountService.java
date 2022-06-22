@@ -1,7 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
-import com.mgammon.tidalregearsdemo.exceptions.PropertyIsNullException;
 import com.mgammon.tidalregearsdemo.models.Mount;
 import com.mgammon.tidalregearsdemo.repositories.MountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +23,6 @@ public class MountService {
     }
 
     public void addNewMount(Mount mount) {
-        if (mount.getMountName() == null || mount.getMountName().isEmpty()) {
-            throw new PropertyIsNullException();
-        }
         mountRepository.save(mount);
     }
 
