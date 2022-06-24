@@ -61,6 +61,10 @@ public class MyControllerAdvice extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>("Item tier not high enough. Minimum tier equivalent is " + minimumTierEquiv + ".", headers, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(DuplicateBuildException.class)
+    public ResponseEntity<String> handleDuplicateBuild(DuplicateBuildException duplicateBuildException) {
+        return new ResponseEntity<>("A build with the given main hand, head, chest, shoes, minimum IP, and tier equivalent already exists.", HttpStatus.BAD_REQUEST);
+    }
 
     @Override
     protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
@@ -70,6 +74,7 @@ public class MyControllerAdvice extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         return new ResponseEntity<Object>("Unable to read request body. Body may be empty or not formatted properly. Please check your request and try again.", HttpStatus.BAD_REQUEST);
-
     }
+
+
 }
