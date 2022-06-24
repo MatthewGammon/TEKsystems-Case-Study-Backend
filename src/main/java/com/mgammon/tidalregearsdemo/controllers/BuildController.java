@@ -24,14 +24,19 @@ public class BuildController {
         return buildService.getBuilds();
     }
 
+    @GetMapping("{buildId}")
+    public Optional<Build> getBuildById(@PathVariable Long buildId) {
+        return buildService.getBuildById(buildId);
+    }
+
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
     public void addNewBuild(@RequestBody Build build) {
         buildService.addNewBuild(build);
     }
 
-    @GetMapping("{buildId}")
-    public Optional<Build> getBuildById(@PathVariable Long buildId) {
-        return buildService.getBuildById(buildId);
+    @DeleteMapping("{buildId}")
+    public void deleteBuild(@PathVariable Long buildId){
+        buildService.deleteBuild(buildId);
     }
 }
