@@ -1,5 +1,6 @@
 package com.mgammon.tidalregearsdemo.services;
 
+import com.mgammon.tidalregearsdemo.exceptions.DuplicateBuildException;
 import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
 import com.mgammon.tidalregearsdemo.models.Build;
 import com.mgammon.tidalregearsdemo.repositories.BuildRepository;
@@ -23,10 +24,10 @@ public class BuildService {
     }
 
     public void addNewBuild(Build build) {
-       Integer minIp =  build.getMinimumIp();
-       String name = build.getBuildName();
-//       this is where the db query is stored
-//                if (minIP >= )
+        Build foundBuild = buildRepository.findDuplicateBuild(build.getMainHand(), build.getHeadGear(), build.getChestGear(), build.getShoes(), build.getMinimumIp(), build.getMinimumTier());
+        if (foundBuild != null) {
+            throw new DuplicateBuildException();
+        }
         buildRepository.save(build);
     }
 
@@ -39,4 +40,7 @@ public class BuildService {
     }
 
 
+    public void deleteBuild(Long buildId) {
+        buildRepository.deleteById(buildId);
+    }
 }
