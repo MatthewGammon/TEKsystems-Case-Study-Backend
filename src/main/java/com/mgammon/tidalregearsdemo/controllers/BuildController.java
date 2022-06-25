@@ -4,6 +4,7 @@ import com.mgammon.tidalregearsdemo.models.Build;
 import com.mgammon.tidalregearsdemo.services.BuildService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,8 +36,13 @@ public class BuildController {
         buildService.addNewBuild(build);
     }
 
+    @PutMapping("{buildId}")
+    public ResponseEntity<Build> updateBuild(@PathVariable Long buildId, @RequestBody Build build) {
+        return buildService.updateBuild(buildId, build);
+    }
+
     @DeleteMapping("{buildId}")
-    public void deleteBuild(@PathVariable Long buildId){
+    public void deleteBuild(@PathVariable Long buildId) {
         buildService.deleteBuild(buildId);
     }
 }
