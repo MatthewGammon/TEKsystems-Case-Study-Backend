@@ -5,6 +5,8 @@ import com.mgammon.tidalregearsdemo.exceptions.NotFoundByIdException;
 import com.mgammon.tidalregearsdemo.models.Build;
 import com.mgammon.tidalregearsdemo.repositories.BuildRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,5 +44,25 @@ public class BuildService {
 
     public void deleteBuild(Long buildId) {
         buildRepository.deleteById(buildId);
+    }
+
+    public ResponseEntity<Build> updateBuild(Long buildId, Build build) {
+        // the use of a DTO and something like MapStruct would absolutely be the preferred implementation here
+        Build originalBuild = buildRepository.findById(buildId).orElseThrow(() -> new NotFoundByIdException(buildId, "build"));
+        originalBuild.setBuildName(build.getBuildName());
+        originalBuild.setBuildRole(build.getBuildRole());
+        originalBuild.setMinimumTier(build.getMinimumTier());
+        originalBuild.setMinimumIp(build.getMinimumIp());
+        originalBuild.setHeadGear(build.getHeadGear());
+        originalBuild.setChestGear(build.getChestGear());
+        originalBuild.setShoes(build.getShoes());
+        originalBuild.setMainHand(build.getMainHand());
+        originalBuild.setOffHand(build.getOffHand());
+        originalBuild.setCape(build.getCape());
+        originalBuild.setFood(build.getFood());
+        originalBuild.setPotion(build.getPotion());
+        originalBuild.setMount(build.getMount());
+        final Build updatedBuild = buildRepository.save(originalBuild);
+        return new ResponseEntity<>(updatedBuild, HttpStatus.OK);
     }
 }
