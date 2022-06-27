@@ -1,9 +1,5 @@
 package com.mgammon.tidalregearsdemo.models;
 
-import com.sun.istack.NotNull;
-import org.hibernate.annotations.Type;
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Entity

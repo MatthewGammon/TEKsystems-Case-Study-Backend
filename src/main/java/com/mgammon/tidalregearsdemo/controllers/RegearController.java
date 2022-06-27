@@ -5,6 +5,7 @@ import com.mgammon.tidalregearsdemo.services.RegearService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,10 +23,12 @@ public class RegearController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')or hasRole('USER')")
     public List<Regear> getRegears() {
         return regearService.getRegears();
     }
 
+    @PreAuthorize("hasRole('ADMIN')or hasRole('USER')")
     @GetMapping("{regearId}")
     public Optional<Regear> getRegearById(@PathVariable Long regearId) {
         return regearService.getRegearById(regearId);
