@@ -1,4 +1,4 @@
-package com.mgammon.tidalregearsdemo.payload;
+package com.mgammon.tidalregearsdemo.payload.request;
 
 import javax.validation.constraints.NotBlank;
 
