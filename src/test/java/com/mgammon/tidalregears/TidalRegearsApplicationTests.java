@@ -1,10 +1,10 @@
-package com.mgammon.tidalregearsdemo;
+package com.mgammon.tidalregears;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TidalRegearsDemoApplicationTests {
+class TidalRegearsApplicationTests {
 
     @Test
     void contextLoads() {
