@@ -1,9 +1,12 @@
 package com.mgammon.tidalregears.models;
 
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "builds")
+@EqualsAndHashCode
 public class Build {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
