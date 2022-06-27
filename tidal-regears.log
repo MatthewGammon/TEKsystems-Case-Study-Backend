@@ -1,0 +1,117 @@
+2022-06-27 01:47:09.145  INFO 35488 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : Starting TidalRegearsDemoApplication using Java 17.0.2 on MG-Desktop with PID 35488 (C:\Users\mgamm\IdeaProjects\TidalRegearsDemo\target\classes started by mgamm in C:\Users\mgamm\IdeaProjects\TidalRegearsDemo)
+2022-06-27 01:47:09.146  INFO 35488 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : No active profile set, falling back to 1 default profile: "default"
+2022-06-27 01:47:09.178  INFO 35488 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-27 01:47:09.178  INFO 35488 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-27 01:47:09.678  INFO 35488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-27 01:47:09.754  INFO 35488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 13 JPA repository interfaces.
+2022-06-27 01:47:10.176  INFO 35488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-27 01:47:10.182  INFO 35488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-27 01:47:10.182  INFO 35488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-27 01:47:10.238  INFO 35488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-27 01:47:10.238  INFO 35488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1059 ms
+2022-06-27 01:47:10.302  WARN 35488 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-27 01:47:10.333  INFO 35488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-27 01:47:10.366  INFO 35488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-27 01:47:10.440  INFO 35488 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-27 01:47:10.468  INFO 35488 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-27 01:47:10.551  INFO 35488 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-27 01:47:10.608  INFO 35488 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-06-27 01:47:11.071 DEBUG 35488 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles (id)
+2022-06-27 01:47:11.084 DEBUG 35488 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users (id)
+2022-06-27 01:47:11.102  INFO 35488 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-27 01:47:11.108  INFO 35488 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 01:47:11.970  INFO 35488 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@660f4145, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58e814c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ccf37b1, org.springframework.security.web.header.HeaderWriterFilter@495e3eb5, org.springframework.web.filter.CorsFilter@62a3cace, org.springframework.security.web.authentication.logout.LogoutFilter@3e8c709, com.mgammon.tidalregears.jwt.AuthTokenFilter@36c9af44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8dd3727, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a78dabb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31b7632, org.springframework.security.web.session.SessionManagementFilter@4648b3ef, org.springframework.security.web.access.ExceptionTranslationFilter@7c0d8c63, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@676a778c]
+2022-06-27 01:47:12.142  INFO 35488 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-06-27 01:47:12.178  INFO 35488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-27 01:47:12.188  INFO 35488 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : Started TidalRegearsDemoApplication in 3.3 seconds (JVM running for 3.878)
+2022-06-27 02:19:59.367  INFO 35488 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 02:19:59.371  INFO 35488 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-27 02:19:59.374  INFO 35488 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-27 02:20:37.000  INFO 38936 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : Starting TidalRegearsDemoApplication using Java 17.0.2 on MG-Desktop with PID 38936 (C:\Users\mgamm\IdeaProjects\TidalRegearsDemo\target\classes started by mgamm in C:\Users\mgamm\IdeaProjects\TidalRegearsDemo)
+2022-06-27 02:20:37.001  INFO 38936 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : No active profile set, falling back to 1 default profile: "default"
+2022-06-27 02:20:37.035  INFO 38936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-27 02:20:37.035  INFO 38936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-27 02:20:37.518  INFO 38936 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-27 02:20:37.590  INFO 38936 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 13 JPA repository interfaces.
+2022-06-27 02:20:38.008  INFO 38936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-27 02:20:38.014  INFO 38936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-27 02:20:38.015  INFO 38936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-27 02:20:38.082  INFO 38936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-27 02:20:38.082  INFO 38936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1046 ms
+2022-06-27 02:20:38.148  WARN 38936 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-27 02:20:38.181  INFO 38936 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-27 02:20:38.213  INFO 38936 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-27 02:20:38.287  INFO 38936 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-27 02:20:38.322  INFO 38936 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-27 02:20:38.428  INFO 38936 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-27 02:20:38.491  INFO 38936 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-06-27 02:20:38.951 DEBUG 38936 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles (id)
+2022-06-27 02:20:38.969 DEBUG 38936 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users (id)
+2022-06-27 02:20:38.993  INFO 38936 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-27 02:20:38.998  INFO 38936 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 02:20:39.898  INFO 38936 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@525dca18, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ee224f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1969c54c, org.springframework.security.web.header.HeaderWriterFilter@7156b336, org.springframework.web.filter.CorsFilter@53d9772a, org.springframework.security.web.authentication.logout.LogoutFilter@3da1ede, com.mgammon.tidalregears.jwt.AuthTokenFilter@2feb594b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6dd672ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@717bf57d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e0e2738, org.springframework.security.web.session.SessionManagementFilter@788c0843, org.springframework.security.web.access.ExceptionTranslationFilter@3fcd73b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27e309de]
+2022-06-27 02:20:40.049  INFO 38936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-06-27 02:20:40.083  INFO 38936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-27 02:20:40.093  INFO 38936 --- [restartedMain] c.m.t.TidalRegearsDemoApplication        : Started TidalRegearsDemoApplication in 3.343 seconds (JVM running for 3.949)
+2022-06-27 02:20:58.772  INFO 38936 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 02:20:58.775  INFO 38936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-27 02:20:58.777  INFO 38936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-27 02:22:53.544  INFO 15104 --- [restartedMain] c.m.t.TidalRegearsApplication            : Starting TidalRegearsApplication using Java 17.0.2 on MG-Desktop with PID 15104 (C:\Users\mgamm\IdeaProjects\TidalRegearsDemo\target\classes started by mgamm in C:\Users\mgamm\IdeaProjects\TidalRegearsDemo)
+2022-06-27 02:22:53.544  INFO 15104 --- [restartedMain] c.m.t.TidalRegearsApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-06-27 02:22:53.575  INFO 15104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-27 02:22:53.576  INFO 15104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-27 02:22:54.056  INFO 15104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-27 02:22:54.134  INFO 15104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 13 JPA repository interfaces.
+2022-06-27 02:22:54.528  INFO 15104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-27 02:22:54.535  INFO 15104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-27 02:22:54.535  INFO 15104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-27 02:22:54.597  INFO 15104 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-27 02:22:54.597  INFO 15104 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1021 ms
+2022-06-27 02:22:54.665  WARN 15104 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-27 02:22:54.696  INFO 15104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-27 02:22:54.729  INFO 15104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-27 02:22:54.801  INFO 15104 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-27 02:22:54.828  INFO 15104 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-27 02:22:54.909  INFO 15104 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-27 02:22:54.967  INFO 15104 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-06-27 02:22:55.412 DEBUG 15104 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles (id)
+2022-06-27 02:22:55.424 DEBUG 15104 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users (id)
+2022-06-27 02:22:55.441  INFO 15104 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-27 02:22:55.447  INFO 15104 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 02:22:56.287  INFO 15104 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11bef8da, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ebff7e, org.springframework.security.web.context.SecurityContextPersistenceFilter@625f49f1, org.springframework.security.web.header.HeaderWriterFilter@6a695053, org.springframework.web.filter.CorsFilter@4b998f23, org.springframework.security.web.authentication.logout.LogoutFilter@2e712cbd, com.mgammon.tidalregears.jwt.AuthTokenFilter@6b1497f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24d7f057, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@308a6c90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7eb9b962, org.springframework.security.web.session.SessionManagementFilter@57794358, org.springframework.security.web.access.ExceptionTranslationFilter@7edcbaa3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ee224f5]
+2022-06-27 02:22:56.433  INFO 15104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-06-27 02:22:56.465  INFO 15104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-27 02:22:56.475  INFO 15104 --- [restartedMain] c.m.t.TidalRegearsApplication            : Started TidalRegearsApplication in 3.182 seconds (JVM running for 3.673)
+2022-06-27 02:25:09.324  INFO 15104 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-27 02:25:09.325  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-27 02:25:09.328  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
