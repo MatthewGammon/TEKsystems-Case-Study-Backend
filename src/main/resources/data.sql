@@ -293,3 +293,20 @@ VALUES (1, 'Swiftclaw'),
        (23, 'Juggernaut'),
        (24, 'Phalanx Beetle')
 ;
+
+INSERT INTO roles(id, name)
+VALUES (1, 'ROLE_USER'),
+       (2, 'ROLE_ADMIN')
+;
+
+INSERT INTO users (email, password, username)
+VALUES ('cynical@tidal.com', 'test', 'CynicalEntity'),
+       ('mg@gmail.com', 'test', 'matthew')
+;
+
+INSERT INTO regears (regear_id, character_name, chest_equivalent, chest_gear, chest_tier, event_id, guild_name,
+                     head_equivalent, head_gear, head_tier, item_power, main_equivalent, main_hand, main_tier, shoes,
+                     shoes_equivalent, shoes_tier, status, time_of_death)
+VALUES (1, 'CynicalEntity', 8, 'Cleric Robe', '6.2', '492985911', 'Tidal', 8, 'Mercenary Hood', '6.2', 1507, 8,
+        'Fallen Staff', '6.2', 'Scholar Sandals', 8, '7.1', 'pending', 'Fri, 17 Jun 2022 05:07 UTC')
+;
