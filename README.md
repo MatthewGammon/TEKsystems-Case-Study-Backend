@@ -28,10 +28,66 @@ A regular user will be able to:
 
 
 ## Tech and Tools
-- Java
-- Spring Boot
-- MariaDB
-- MySQL
+* Java
+* Spring Boot
+* Spring Security
+* Spring Data
+* MariaDB
+* MySQL
+
+## Challenges Encountered During Development
+The number one challenge that I faced in the development of this project was ensuring that I could retrieve necessary information to display to the end user.
+When a request is sent from the Albion Player Info web app, each piece of gear the player is wearing is sent on the request body like this:
+
+character_name	"CynicalEntity"
+chest_armor	"T6_ARMOR_CLOTH_SET2@2"
+event_id	"492985911"
+guild_name	"Tidal"
+head_piece	"T6_HEAD_LEATHER_SET1@2"
+item_power	1507
+main_hand	"T6_2H_HOLYSTAFF_HELL@2"
+shoes	"T7_SHOES_CLOTH_SET1@1"
+time_of_death	"Fri, 17 Jun 2022 05:07 UTC"
+
+Each name of an item contains three key pieces of information. The name of the item, the tier of the item, and the quality of the item. 
+A look up of each item's Unique Name(T6_HEAD_LEATHER_SET1@2 for example) has to be performed in order to retrieve the object containing all information about that item. This includes the following information:
+* Localized Name
+* Unique Name
+* Item Description
+* LocalizationNameVariable
+* LocalizationDescriptionVariable
+* LocalizedNames
+* LocalizedDescriptions
+* Index
+* UniqueName
+
+The Unique Name is manipulated and used to generate Item Level and Tier Equivalent values.
+The Localized English Name is retrieved and inserted into the new body.
+
+The end result of these lookups and manipulations is a new request body that looks like this...
+
+  characterName: 'CynicalEntity',
+  guildName: 'Tidal',
+  eventId: '492985911',
+  itemPower: 1507,
+  mainHand: 'Fallen Staff',
+  mainTier: '6.2',
+  mainEquivalent: 8,
+  headGear: 'Mercenary Hood',
+  headTier: '6.2',
+  headEquivalent: 8,
+  chestGear: 'Cleric Robe',
+  chestTier: '6.2',
+  chestEquivalent: 8,
+  shoes: 'Scholar Sandals',
+  shoesTier: '7.1',
+  shoesEquivalent: 8,
+  timeOfDeath: 'Fri, 17 Jun 2022 05:07 UTC'
+  
+This information provides much more value to the end user who will be managing this request and resupplying the gear.
+
+Altogether I had to work on 4 projects including two projects that I built earlier this year in order to get a fully functioning final product. 
+
 
 
 ## Project Frontend
