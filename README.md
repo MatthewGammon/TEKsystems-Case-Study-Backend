@@ -69,23 +69,23 @@ The Localized English Name is retrieved and inserted into the new body.
 The end result of these lookups and manipulations is a new request body that looks like this...
 
 ```json
-  characterName: 'CynicalEntity',
-  guildName: 'Tidal',
-  eventId: '492985911',
-  itemPower: 1507,
-  mainHand: 'Fallen Staff',
-  mainTier: '6.2',
-  mainEquivalent: 8,
-  headGear: 'Mercenary Hood',
-  headTier: '6.2',
-  headEquivalent: 8,
-  chestGear: 'Cleric Robe',
-  chestTier: '6.2',
-  chestEquivalent: 8,
-  shoes: 'Scholar Sandals',
-  shoesTier: '7.1',
-  shoesEquivalent: 8,
-  timeOfDeath: 'Fri, 17 Jun 2022 05:07 UTC'
+  "characterName": 'CynicalEntity',
+  "guildName": 'Tidal',
+  "eventId": '492985911',
+  "itemPower": 1507,
+  "mainHand": 'Fallen Staff',
+  "mainTier": '6.2',
+  "mainEquivalent": 8,
+  "headGear": 'Mercenary Hood',
+  "headTier": '6.2',
+  "headEquivalent": 8,
+  "chestGear": 'Cleric Robe',
+  "chestTier": '6.2',
+  "chestEquivalent": 8,
+  "shoes": 'Scholar Sandals',
+  "shoesTier": '7.1',
+  "shoesEquivalent": 8,
+  "timeOfDeath": 'Fri, 17 Jun 2022 05:07 UTC'
   ```
   
 This information provides much more value to the end user who will be managing this request and resupplying the gear.
