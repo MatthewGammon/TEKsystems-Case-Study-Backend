@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BuildRepository extends JpaRepository<Build, Long> {
     // this method is for use in the RegearService to validate a regear request
+    // if all 4 main pieces of gear that the player making the request is wearing are present in a single row in the builds table
+    // then a row is returned and the business logic continues on
     @Query(value = "SELECT b FROM Build b WHERE b.mainHand = ?1 and b.headGear = ?2 and b.chestGear = ?3 and b.shoes = ?4")
     Build findBuildByRequiredGear(String mainHand, String headGear, String chestGear, String shoes);
 

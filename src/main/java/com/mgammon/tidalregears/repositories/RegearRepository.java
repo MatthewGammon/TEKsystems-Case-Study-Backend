@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RegearRepository extends JpaRepository<Regear, Long> {
 
+    // finds a regear request by eventId.
     @Query(value = "SELECT r FROM Regear r WHERE r.eventId = ?1")
     Regear findByEventId(String eventId);
 
