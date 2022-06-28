@@ -90,7 +90,7 @@ The end result of these lookups and manipulations is a new request body that loo
   
 This information provides much more value to the end user who will be managing this request and resupplying the gear.
 
-Altogether I had to work on 4 projects including two projects that I built earlier this year in order to get a fully functioning final product. 
+I worked on 4 projects simultaneously in order to achieve the desired functionality, but am very happy with how I was able to make them work together and the end result.
 
 
 
