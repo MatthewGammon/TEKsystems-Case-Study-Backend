@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Transactional
 public class BuildServiceTest {
 
-
     @Autowired
     BuildService buildService;
 
